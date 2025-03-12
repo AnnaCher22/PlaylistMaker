@@ -1,5 +1,6 @@
 package com.example.playlistmaker
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -15,16 +16,16 @@ class MainActivity : AppCompatActivity() {
         val settings = findViewById<Button>(R.id.settings)
 
         search.setOnClickListener {
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
+            val intentSearch = Intent(this, SearchActivity::class.java)
+            startActivity(intentSearch)
         }
         media.setOnClickListener {
-            val intent = Intent(this, MediaActivity::class.java)
-            startActivity(intent)
+            val intentMedia = Intent(this, MediaActivity::class.java)
+            startActivity(intentMedia)
         }
         settings.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
+            val intentSettings = Intent(this, SettingsActivity::class.java)
+            startActivity(intentSettings)
         }
     }
 }

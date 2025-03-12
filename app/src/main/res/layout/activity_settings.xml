@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingHorizontal="@dimen/padding_screen_hor"
-    android:paddingVertical="@dimen/padding_screen_vert"
-    android:background="@color/white">
+    style="@style/setting_layout">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,139 +12,39 @@
 
         <ImageButton
             android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:contentDescription="TODO"
-            android:padding="12dp"
-            android:paddingTop="12dp"
+            style="@style/ImageButtonSettings"
             android:src="@drawable/back_button"
-            app:tint="@color/black" />
+             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="12dp"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:text="@string/settings"
-            android:paddingTop="10dp"/>
+            style="@style/textTopSettings"
+            android:text="@string/settings"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="61dp"
-        android:orientation="horizontal">
-        <TextView
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/theme_switcher1"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:paddingTop= "21dp"
-        android:importantForAccessibility= "no"
-        android:textSize="16sp"
-        android:textColor= "@color/black"
-        android:textAllCaps = "false"
+        style="@style/switch_style"
         android:gravity="left|center_vertical"
-        android:text="@string/setting_theme"
-        android:backgroundTint = "@color/white"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:layout_marginStart="9dp"
-        android:layout_marginEnd="12dp"
-        android:src="@drawable/black"
-        android:paddingTop= "11dp"/>
-    </LinearLayout>
+        android:text="@string/setting_theme" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="61dp"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/theme_switcher2"
+        style="@style/setting_button"
+        android:drawableRight="@drawable/share"
+        android:text="@string/setting_share" />
 
-        <TextView
-            android:id="@+id/theme_switcher2"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:paddingTop= "21dp"
-            android:importantForAccessibility= "no"
-            android:textSize="16sp"
-            android:textColor= "@color/black"
-            android:textAllCaps = "false"
-            android:gravity="left|center_vertical"
-            android:text="@string/setting_share"
-            android:backgroundTint = "@color/white"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_marginStart="9dp"
-            android:layout_marginEnd="12dp"
-            android:src="@drawable/share"
-            android:paddingTop= "11dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="61dp"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/theme_switcher3"
+        style="@style/setting_button"
+        android:drawableRight="@drawable/support"
+        android:text="@string/setting_support" />
 
-        <TextView
-            android:id="@+id/theme_switcher3"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:paddingTop= "21dp"
-            android:importantForAccessibility= "no"
-            android:textSize="16sp"
-            android:textColor= "@color/black"
-            android:textAllCaps = "false"
-            android:gravity="left|center_vertical"
-            android:text="@string/setting_support"
-            android:backgroundTint = "@color/white"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_marginStart="9dp"
-            android:layout_marginEnd="12dp"
-            android:src="@drawable/support"
-            android:paddingTop= "11dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="61dp"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/theme_switcher4"
+        style="@style/setting_button"
+        android:drawableRight="@drawable/forward"
+        android:text="@string/setting_terms" />
 
-        <TextView
-            android:id="@+id/theme_switcher4"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:paddingTop= "21dp"
-            android:importantForAccessibility= "no"
-            android:textSize="16sp"
-            android:textColor= "@color/black"
-            android:textAllCaps = "false"
-            android:gravity="left|center_vertical"
-            android:text="@string/setting_terms"
-            android:backgroundTint = "@color/white"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_marginStart="9dp"
-            android:layout_marginEnd="12dp"
-            android:src="@drawable/forward"
-            android:paddingTop= "11dp"/>
-    </LinearLayout>
+</LinearLayout>

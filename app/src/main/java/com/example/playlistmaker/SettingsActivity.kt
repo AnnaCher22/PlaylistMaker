@@ -1,6 +1,7 @@
 package com.example.playlistmaker
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -12,10 +13,39 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         val backButton = findViewById<ImageButton>(R.id.back)
+        val shareButton = findViewById<Button>(R.id.theme_switcher2)
+        val supportButton = findViewById<Button>(R.id.theme_switcher3)
+        val termsButton = findViewById<Button>(R.id.theme_switcher4)
+
+        // Возвращаемся назад без создания нового MainActivity
         backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
+        }
+
+        // Кнопка "Поделиться приложением"
+        shareButton.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text))
+            }
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.share)))
+        }
+
+        // Кнопка "Написать в поддержку"
+        supportButton.setOnClickListener {
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:${getString(R.string.support_email)}")
+                putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
+                putExtra(Intent.EXTRA_TEXT, getString(R.string.email_body))
+            }
+            startActivity(Intent.createChooser(emailIntent, getString(R.string.write_support)))
+        }
+
+        // Кнопка "Пользовательское соглашение"
+        termsButton.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.terms_url)))
+            startActivity(browserIntent)
         }
     }
 }
+
