@@ -14,6 +14,7 @@
             android:id="@+id/back"
             style="@style/ImageButtonSettings"
             android:src="@drawable/back_button"
+            android:importantForAccessibility="no"
              />
 
         <TextView

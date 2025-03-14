@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/main"
+<LinearLayout
+    android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/setting_layout">
 
     <LinearLayout
@@ -20,26 +22,15 @@
 
 
     <FrameLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp">
-
-        <ImageView
-            android:id="@+id/clearIcon"
-            style="@style/icon_clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|center_vertical"
-            android:visibility="gone"
-            app:srcCompat="@drawable/clear" />
 
         <EditText
             android:id="@+id/searchView"
             style="@style/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:background="@drawable/edit_text_background"
             android:clipToOutline="true"
             android:drawablePadding="8dp"
@@ -48,11 +39,20 @@
             android:importantForAccessibility="no"
             android:inputType="text"
             android:lines="1"
-            android:maxLines="30"
+            android:maxLines="1"
             android:minHeight="@dimen/min_height_48"
             android:outlineProvider="none"
-            />
+            android:paddingEnd="48dp" />
 
+        <ImageView
+            android:id="@+id/clearIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="12dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/clear"
+            android:background="?attr/selectableItemBackgroundBorderless" />
     </FrameLayout>
 
     <TextView android:id="@+id/searchHint"

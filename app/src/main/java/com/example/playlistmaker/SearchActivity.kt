@@ -15,6 +15,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SearchActivity : AppCompatActivity() {
+    companion object {
+        // Вынесение ключа в константу
+        private const val KEY_SEARCH_QUERY = "SEARCH_QUERY"
+    }
 
     private lateinit var searchEditText: EditText
     private lateinit var clearSearchButton: ImageView
@@ -54,21 +58,21 @@ class SearchActivity : AppCompatActivity() {
 
         clearSearchButton.setOnClickListener {
             searchEditText.text.clear()
-            searchEditText.requestFocus()
-            showKeyboard(searchEditText)
+            searchEditText.clearFocus()
+            hideKeyboard()
         }
     }
 
     // Сохранение текста перед уничтожением активити
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putString("SEARCH_QUERY", searchQuery)
+        outState.putString(KEY_SEARCH_QUERY, searchQuery)
     }
 
     // Восстановление текста после пересоздания активити
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        searchQuery = savedInstanceState.getString("SEARCH_QUERY", "")
+        searchQuery = savedInstanceState.getString(KEY_SEARCH_QUERY, "")
         searchEditText.setText(searchQuery)
     }
 
