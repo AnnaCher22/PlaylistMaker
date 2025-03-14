@@ -1,10 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    style="@style/setting_layout">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        style="@style/topSearch"       >
+        <ImageButton
+            android:id="@+id/backSearch"
+            style="@style/button_back"
+            android:src="@drawable/back_button"
+            android:importantForAccessibility="no"/>
+
+        <TextView
+            style="@style/textTopSettings"
+            android:text="@string/search" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <EditText
+            android:id="@+id/searchView"
+            style="@style/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:clipToOutline="true"
+            android:drawablePadding="8dp"
+            android:hint="@string/search"
+            android:imeOptions="actionDone"
+            android:importantForAccessibility="no"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:minHeight="@dimen/min_height_48"
+            android:outlineProvider="none"
+            android:paddingEnd="48dp" />
+
+        <ImageView
+            android:id="@+id/clearIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="12dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/clear"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+    </FrameLayout>
+
+    <TextView android:id="@+id/searchHint"
+        style="@style/search_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_search_hint"
+        android:visibility="gone"/>
+
+
+
+
+    </LinearLayout>

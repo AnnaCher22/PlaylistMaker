@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    Main screen-->
     <string name="app_name">Playlist Maker</string>
     <string name="media">Медиатека</string>
     <string name="search">Поиск</string>
+    <!--    Setting screen-->
     <string name="settings">Настройки</string>
     <string name="setting_theme">Темная тема</string>
     <string name="setting_share">Поделиться приложением</string>
     <string name="setting_support">Написать в поддержку</string>
     <string name="setting_terms">Пользовательское соглашение</string>
+    <string name="share_text">Попробуйте этот крутой курс по Андроид-разработке: https://practicum.yandex.ru/profile/android-developer/</string>
+    <string name="support_email">anya-cher@yandex.ru</string>
+    <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+    <string name="terms_url">https://practicum.yandex.ru/legal/</string>
+    <string name="share">Поделиться приложением</string>
+    <string name="write_support">Написать в поддержку</string>
+    <string name="terms">Пользовательское соглашение</string>
+    <!--    Search screen-->
+    <string name="error_server_text">Ничего не нашлось</string>
+    <string name="error_internet_text">Проблемы со связью \n\ \n\ Загрузка не удалась. Проверьте подключение к интернету</string>
+    <string name="button_update">Обновить</string>
+    <string name="text_error_other">Возникла проблема на стороне клиента</string>
+    <string name="text_search_hint">Вы искали</string>
+    <string name="text_buton_clear_history">Очистить историю</string>
+
+
 </resources>
